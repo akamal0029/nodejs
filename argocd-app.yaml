@@ -2,12 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: nodejs-app
-  namespace: argocd   # ✅ MUST be argocd
+  namespace: argocd
 spec:
-  project: default
   source:
     repoURL: "https://github.com/akamal0029/nodejs.git"
-    targetRevision: master   # change to main if your repo uses main
+    targetRevision: master
     path: .
   destination:
     server: https://kubernetes.default.svc
